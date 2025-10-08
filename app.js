@@ -21,17 +21,33 @@
 
 // console.log(arr[3]);
 
-const person = (name, age) => {
-   return {
-      name: name,
-      age: age,
-       sayHello() {
+// const person = (name, age) => {
+//    return {
+//       name: name,
+//       age: age,
+//        sayHello() {
+//          console.log("Hello " + this.name);
+//       }
+//    }
+// }
+
+// const person1 = person("John", 25);
+// const person2 = person("Jane", 30);
+// console.log(person1); // John
+// console.log(person2.sayHello());
+
+
+function Person (name, age)  {
+      this.name = name,
+      this.age = age,
+      this.sayHello = function() {
          console.log("Hello " + this.name);
+         console.log("Hello " + this.age);
       }
-   }
+   
 }
 
-const person1 = person("John", 25);
-const person2 = person("Jane", 30);
-console.log(person1); // John
-console.log(person2.sayHello());
+let person1 = new Person("John", 25);
+let person2 = new Person("Jane", 30);
+console.log(person1.sayHello());
+
